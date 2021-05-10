@@ -61,3 +61,30 @@ Route::get('/g/{id}',function($id){
   return $id;
 }) ;
 
+/*______________________*/
+
+// query
+
+Route::get('test',function (Request $r){
+      return dump($r->query());
+});
+
+
+use App\Models\User;
+
+// 
+
+
+Route::get('users/{id}',function(User $id){
+
+     return  $id->ip;
+
+});
+
+
+// if  route not found
+
+Route::fallback(function(){
+   return 'fallback';
+
+});
