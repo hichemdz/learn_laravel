@@ -66,8 +66,9 @@ Route::get('/g/{id}',function($id){
 // query
 
 Route::get('test',function (Request $r){
-      return dump($r->query());
-});
+      $q = $r->query();
+      return dump($q['name']);
+})->middleware('test:lakhder');
 
 
 use App\Models\User;
